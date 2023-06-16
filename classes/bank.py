@@ -23,6 +23,7 @@ class Bank:
 
 
 class Bank:
+    transaction_charge_percent =10
     def __init__(self, account_number, balance, interest_rate):
         self.account_number = account_number
         self.balance = balance
@@ -70,7 +71,9 @@ class Bank:
             self.loan_balance -= amount
             return f"You have successfully repaid ${amount} of your loan. Your new loan balance is ${self.loan_balance}"
     def transfer(self, amount, account):
+        total_amount = amount + (amount *transaction_charge_percent/10)
         if amount > self.balance:
+            self.balance-=total_amount
             return f"Insufficient funds. Your current balance is ${self.balance}"
         else:
             self.balance -= amount

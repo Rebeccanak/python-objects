@@ -21,7 +21,7 @@ class Student:
         return current_year-self.age
 
     def show_initials(self):
-        return f"{self.first_name[0]}.{self.second_name[0]}
+        return f"{self.first_name[0]}.{self.second_name[0]}"
     
 
     
